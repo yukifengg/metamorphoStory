@@ -1,2 +1,5 @@
-mayaM -- 2022-11-1 21:40
+mayaM -- 2022-11-01 21:40
 Added design doc and wiki design docs
+
+mayaM -- 2022-11-02 21:04
+Added more description to the story authors column in database, minor changes to sitemap, using a template to display stories
