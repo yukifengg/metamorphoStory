@@ -9,3 +9,6 @@ Added requirements.txt and pushed to repo
 
 ericS -- 2022-11-07 13:49
 Brainstormed about database; started work
+
+mayaM -- 2022-11-07 16:13
+Added target ship date and copied code to login/out
