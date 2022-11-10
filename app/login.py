@@ -46,8 +46,18 @@ def register():
         # check if the inputs are correct
         # If not, display error message
         
-        # else:
+        # else, add username and password to database
         return redirect('/')        # brings user back to login page
+
+@app.route('/new',methods=['GET','POST'])
+def create_story():
+    if request.method == 'GET':
+        return render_template('create-story.html')
+    # print(request.form)
+
+    # if everything looks good, add story to database
+    return redirect('/')  # change this to the link of the story NOT homepage later!
+    
 
 if __name__ == "__main__": 
     app.debug = True

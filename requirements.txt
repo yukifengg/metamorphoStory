@@ -1,1 +1,1 @@
-Flask version ???
+Flask==2.2.2

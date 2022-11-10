@@ -12,3 +12,7 @@ Brainstormed about database; started work
 
 mayaM -- 2022-11-07 16:13
 Added target ship date and copied code to login/out
+
+mayaM -- 2022-11-10 18:24
+Made basic HTML and Flask for homepage, login, register and create new story
+Updated requirements.txt
