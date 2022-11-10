@@ -1,0 +1,41 @@
+<!-- 
+Metamorphosis: Eric Sohel, Yuki Feng, Maya Mori, Aleksandra Shifrina
+Softdev
+k19 -- sessions in Flask
+2022-11-04
+time spent: 2.0
+ -->
+ 
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title> LOGIN PAGE </title>
+  </head>
+
+  <body>
+    <h1> Metamorphosis: Eric, Yuki, Maya, Sasha</h1>
+
+    <h2>
+      Enter your username and password below to proceed.
+    </h2>
+    {% if has_error %}
+    <h2> Error!</h2>
+    <h2> {{ error }} </h2>
+    {% endif %}
+
+
+    <form action="/", method = "POST">
+      <label for="username"> Username: </label>
+      <input type="text" name="username">
+      <br>
+      <label for="username"> Password: </label>
+      <input type="text" name="password">
+      <br>
+      <br>
+      <input type="submit" name="sub1">
+    </form>
+    <br>
+  </body>
+
+</html>
