@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, redirect
 
 import os
 
@@ -38,9 +38,16 @@ def logout():
     session.pop('username', None)
     return render_template('login.html')
 
-@app.route('/register',methods=['GET'])
+@app.route('/register',methods=['GET','POST'])
 def register():
-    return render_template('register.html')
+    if request.method == 'GET':
+        return render_template('register.html')
+    else:
+        # check if the inputs are correct
+        # If not, display error message
+        
+        # else:
+        return redirect('/')        # brings user back to login page
 
 if __name__ == "__main__": 
     app.debug = True
