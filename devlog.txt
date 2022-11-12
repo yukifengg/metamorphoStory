@@ -35,5 +35,6 @@ worked on css file, adding basic fonts, ect.
 mayaM -- 2022-11-12 13:08
 Created and pupulates tables to store contributors to each story and content inside
 
-
+sashaS -- 2022-11-12 14:17
+created add.html, updated code in db.py and __init__.py to display last addition of story to user who wants to edit
 
