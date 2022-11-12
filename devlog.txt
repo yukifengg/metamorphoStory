@@ -16,3 +16,21 @@ Added target ship date and copied code to login/out
 mayaM -- 2022-11-10 18:24
 Made basic HTML and Flask for homepage, login, register and create new story
 Updated requirements.txt
+
+ericS --2022-11-12 01:10
+created __init__.py and worked on all the initial code that routes the pages. Finished working on code that verifies usernames and passwords. 
+
+ericS --2022-11-12 01:22
+Worked on the db.py file and worked on all the methods related to the database. Finished working on the sign up page. 
+
+ericS --2022-11-12 01:34
+finished working on the login page. User can successfully login and the site also uses cookies so they stay in session.
+
+ericS --2022-11-12 02:01
+worked on basic templates for signup.html, login.html, profile.html, and create.html
+
+ericS --2022-11-12 02:10
+worked on css file, adding basic fonts, ect. 
+
+
+
