@@ -42,6 +42,14 @@ def create_story():
 def create():
     return render_template('create.html')
 
+@app.route('/story/<story_name>', methods=["POST"])
+def add_story(story_name):
+    username = session['username']
+    text = request.form['content']
+    add_to_story(story_name, username, text)
+    #return render_template('frontpage.html')
+    return render_template('add.html',title=story_name,last_addition=get_last_addition(story_name))
+
 @app.route('/story/<story_name>', methods=["GET"])
 def add(story_name):
     return render_template('add.html',title=story_name,last_addition=get_last_addition(story_name))
