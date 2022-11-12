@@ -13,6 +13,9 @@
         <button formaction="/logout" method="POST">LOGOUT!</button>
         <br>
     </form>
+
+    <a href="/story/story5"> story5 link</a>
+
     <form action='/story' class="story-cards" method="POST">
         {% for story in stories %}
         <button type="submit" name="{{story[0]}}" class="card">

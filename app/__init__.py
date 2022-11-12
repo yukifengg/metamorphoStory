@@ -27,7 +27,7 @@ def logout():
     return render_template('frontpage.html')
 
 @app.route('/create', methods=["POST"])
-def create(): 
+def create_story(): 
     db_table_inits()
     title = request.form['title']
     username = session['username']
@@ -38,9 +38,13 @@ def create():
     create_new_story(title, username, text)
     return render_template('create.html')
 
-@app.route('/create')
-def add():
+@app.route('/create', methods=["GET"])
+def create():
     return render_template('create.html')
+
+@app.route('/story/<story_name>', methods=["GET"])
+def add(story_name):
+    return render_template('add.html',title=story_name,last_addition=get_last_addition(story_name))
     
 @app.route('/profile', methods=['GET','POST'])
 def profile():
