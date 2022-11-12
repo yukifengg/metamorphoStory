@@ -1,34 +1,29 @@
 <!DOCTYPE html>
-<html>
-
-  <head>
-    <title> LOGIN PAGE </title>
-  </head>
-
-  <body>
-    <h1> MetamorphoStory</h1>
-
-    <h2>
-      Enter your username and password below to proceed.
-    </h2>
-
-    {% if has_error %}
-    <h2> Error!</h2>
-    <h2> {{ error }} </h2>
-    {% endif %}
-
-    <form action="/", method = "POST">
-      <label for="username"> Username: </label>
-      <input type="text" name="username">
-      <br>
-      <label for="username"> Password: </label>
-      <input type="text" name="password">
-      <br>
-      <br>
-      <input type="submit" name="sub1" value="Login">
+<html lang="en">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+    <form>
+        <button class="home-button" formaction="/">home</button>
     </form>
-    <br>
-    <a href="/register"> Register here! </a>
-  </body>
-
+    <div class="login-container">
+        <h1 class="login-header">Login</h1>
+        <form class="login-form" action="/profile" method="POST">
+            Username:
+            <input class="login-input" type="text" name="username" required>
+            Password:
+            <input class="login-input" type="password" name="password" required>
+            <input class="login-input" type="submit" name="login">
+            {% if error %}
+            The wrong username or password was entered.
+            {% endif %}
+        </form>
+        <form class="signup-form-login">
+            Don't have an account?
+            <button id="signup-login" formaction="/signup">Create an account</button>
+        </form>
+    </div>
+</body>
 </html>
