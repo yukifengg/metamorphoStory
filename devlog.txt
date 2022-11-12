@@ -32,5 +32,8 @@ worked on basic templates for signup.html, login.html, profile.html, and create.
 ericS --2022-11-12 02:10
 worked on css file, adding basic fonts, ect. 
 
+mayaM -- 2022-11-12 13:08
+Created and pupulates tables to store contributors to each story and content inside
+
 
 

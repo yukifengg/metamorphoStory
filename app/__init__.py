@@ -28,6 +28,14 @@ def logout():
 
 @app.route('/create', methods=["POST"])
 def create(): 
+    db_table_inits()
+    title = request.form['title']
+    username = session['username']
+    text = request.form['content']
+    print(title)
+    print(username)
+    print(text)
+    create_new_story(title, username, text)
     return render_template('create.html')
 
 @app.route('/create')
