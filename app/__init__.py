@@ -5,8 +5,7 @@ from db import *
 
 app = Flask(__name__)
 
-# app.secret_key = secrets.token_bytes(32)
-app.secret_key = b"foo"
+app.secret_key = secrets.token_bytes(32)
 
 @app.route('/')
 def home():
@@ -38,27 +37,27 @@ def create_story():
     print(text)
     create_new_story(title, username, text)
     # return render_template('create.html')
-    return add(title)
+    return add(get_story_id()-1)
 
 @app.route('/create', methods=["GET"])
 def create():
     return render_template('create.html')
 
-@app.route('/story/<story_name>', methods=["POST"])
-def add_story(story_name):
-    print("Title: "+story_name)
+@app.route('/story/<story_id>', methods=["POST"])
+def add_story(story_id):
+    print("ID: "+story_id)
     username = session['username']
     text = request.form['content']
-    add_to_story(story_name, username, text)
+    add_to_story(story_id, username, text)
     #return render_template('frontpage.html')
-    return add(story_name)
+    return add(story_id)
     # return render_template('add.html',title=story_name,last_addition=get_last_addition(story_name))
 
-@app.route('/story/<story_name>', methods=["GET"])
-def add(story_name):
-    if can_read(session['username'],story_name):
-        return render_template('display-story.html',title=story_name,story_content=get_story_content(story_name))
-    return render_template('add.html',title=story_name,last_addition=get_last_addition(story_name))
+@app.route('/story/<story_id>', methods=["GET"])
+def add(story_id):
+    if can_read(session['username'],story_id):
+        return render_template('display-story.html',title=story_id,story_content=get_story_content(story_id))
+    return render_template('add.html',title=story_id,last_addition=get_last_addition(story_id))
 
 @app.route('/profile', methods=['GET','POST'])
 def profile():
