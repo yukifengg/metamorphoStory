@@ -86,12 +86,9 @@ def profile():
     username = session['username']
     # for story in all_stories():
     #     print(f"{username} {story} {can_read(username,story)}")
+    get_story_id()
 
     return render_template('profile.html', username = username,readable_stories=readable_stories(username), editable_stories=editable_stories(username))
-
-@app.route('/story', methods=["POST"])
-def story():
-    return render_template('create.html')
 
 if __name__ == '__main__':
     app.debug = True

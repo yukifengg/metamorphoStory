@@ -44,7 +44,7 @@ def can_read(username, title):
     c.execute(f"SELECT * FROM {contributer_table_name}")
     editors_list = {row[0] for row in c}
     db_close()
-    print(editors_list)
+    # print(editors_list)
     return username in editors_list
 
 def readable_stories(username):
@@ -72,12 +72,23 @@ def get_story_content(title):
     db_close()
     return story_content
 
+def get_story_id():
+    c = db_connect()
+    c.execute("SELECT * FROM stories")
+    story_id = 0
+    for row in c:
+        story_id += 1
+    db_close()
+    print(f"Story ID: {story_id}")
+    return story_id
+
 def create_new_story(title, username, text):
+    story_id = get_story_id()
     if check_story_not_exists(title):
         c = db_connect()
         contributer_table_name = title + "_contributors"
         story_part = title + "_parts"
-        c.execute('INSERT INTO stories VALUES (?,?)',(23, title))
+        c.execute('INSERT INTO stories VALUES (?,?)',(story_id, title))#(23, title))
         c.execute(f'CREATE TABLE IF NOT EXISTS {contributer_table_name} (contributors text)')
         c.execute(f'CREATE TABLE IF NOT EXISTS {story_part} (story_part text)')
         # c.execute(f'INSERT INTO {contributer_table_name} VALUES (\'{username}\')')
@@ -129,7 +140,7 @@ def create_new_user(username, password): #creates new user
     c = db_connect()
     c.execute('INSERT INTO users VALUES (?,?)',(username, password))
     c.execute("SELECT * from users")
-    print(len(c.fetchall()))
+    # print(len(c.fetchall()))
     db_close()
 
 
