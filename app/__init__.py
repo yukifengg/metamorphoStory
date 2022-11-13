@@ -37,7 +37,8 @@ def create_story():
     print(username)
     print(text)
     create_new_story(title, username, text)
-    return render_template('create.html')
+    # return render_template('create.html')
+    return add(title)
 
 @app.route('/create', methods=["GET"])
 def create():
@@ -50,11 +51,12 @@ def add_story(story_name):
     text = request.form['content']
     add_to_story(story_name, username, text)
     #return render_template('frontpage.html')
-    return render_template('add.html',title=story_name,last_addition=get_last_addition(story_name))
+    return add(story_name)
+    # return render_template('add.html',title=story_name,last_addition=get_last_addition(story_name))
 
 @app.route('/story/<story_name>', methods=["GET"])
 def add(story_name):
-    if can_read:
+    if can_read(session['username'],story_name):
         return render_template('display-story.html',title=story_name,story_content=get_story_content(story_name))
     return render_template('add.html',title=story_name,last_addition=get_last_addition(story_name))
 
