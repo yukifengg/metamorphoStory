@@ -14,9 +14,28 @@
         <br>
     </form>
 
-    <a href="/story/story5"> story5 link</a>
+    <!-- <a href="/story/story5"> story5 link</a> -->
 
-    <form action='/story' class="story-cards" method="POST">
+    <!-- {% for story in stories %}
+      <a href="/story/{{story}}"> {{ story }} link</a>
+      <br>
+    {% endfor %} -->
+    <h2> Welcome {{ username }}! You are logged in!</h2>
+
+    <h3> Add to a story: </h3>
+
+    {% for story in editable_stories %}
+      <a href="/story/{{story}}"> {{ story }} link</a>
+      <br>
+    {% endfor %}
+
+    <h3> Read a story: </h3>
+    {% for story in readable_stories %}
+      <a href="/story/{{story}}"> {{ story }} link</a>
+      <br>
+    {% endfor %}
+
+    <!-- <form action='/story' class="story-cards" method="POST">
         {% for story in stories %}
         <button type="submit" name="{{story[0]}}" class="card">
             <div class="title">{{story[1]}}</div>
@@ -24,5 +43,5 @@
             <br>
         </button>
         {% endfor %}
-    </form>
+    </form> -->
 </body>
