@@ -64,6 +64,14 @@ def editable_stories(username):
             editable_stories.append(story)
     return editable_stories
 
+def get_story_content(title):
+    c = db_connect()
+    story_table = title + "_parts"
+    c.execute(f"SELECT * FROM {story_table}")
+    story_content = [row[0] for row in c]
+    db_close()
+    return story_content
+
 def create_new_story(title, username, text):
     if check_story_not_exists(title):
         c = db_connect()

@@ -54,6 +54,8 @@ def add_story(story_name):
 
 @app.route('/story/<story_name>', methods=["GET"])
 def add(story_name):
+    if can_read:
+        return render_template('display-story.html',title=story_name,story_content=get_story_content(story_name))
     return render_template('add.html',title=story_name,last_addition=get_last_addition(story_name))
 
 @app.route('/profile', methods=['GET','POST'])

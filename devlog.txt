@@ -18,10 +18,10 @@ Made basic HTML and Flask for homepage, login, register and create new story
 Updated requirements.txt
 
 ericS --2022-11-12 01:10
-created __init__.py and worked on all the initial code that routes the pages. Finished working on code that verifies usernames and passwords. 
+created __init__.py and worked on all the initial code that routes the pages. Finished working on code that verifies usernames and passwords.
 
 ericS --2022-11-12 01:22
-Worked on the db.py file and worked on all the methods related to the database. Finished working on the sign up page. 
+Worked on the db.py file and worked on all the methods related to the database. Finished working on the sign up page.
 
 ericS --2022-11-12 01:34
 finished working on the login page. User can successfully login and the site also uses cookies so they stay in session.
@@ -30,7 +30,7 @@ ericS --2022-11-12 02:01
 worked on basic templates for signup.html, login.html, profile.html, and create.html
 
 ericS --2022-11-12 02:10
-worked on css file, adding basic fonts, ect. 
+worked on css file, adding basic fonts, ect.
 
 mayaM -- 2022-11-12 13:08
 Created and pupulates tables to store contributors to each story and content inside
@@ -38,3 +38,5 @@ Created and pupulates tables to store contributors to each story and content ins
 sashaS -- 2022-11-12 14:17
 created add.html, updated code in db.py and __init__.py to display last addition of story to user who wants to edit
 
+mayaM -- 2022-11-13 12:16
+Profile page displays stories user can contribute to and read under different headings and link to stories displays the entire story or a form to edit it

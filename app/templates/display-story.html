@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> {{story_title}} </title>
+</head>
+<body>
+    <form>
+        <button formaction="/profile">profile</button>
+        <button formaction="/logout" method="POST">LOGOUT!</button>
+        <br>
+    </form>
+
+    <h2> {{story_title}}</h2>
+
+    {% for line in story_content %}
+      {{line}}
+      <br>
+    {% endfor %}
+
+
+    <!-- <form action='/story' class="story-cards" method="POST">
+        {% for story in stories %}
+        <button type="submit" name="{{story[0]}}" class="card">
+            <div class="title">{{story[1]}}</div>
+            <div class="creator">{{story[2]}}</div>
+            <br>
+        </button>
+        {% endfor %}
+    </form> -->
+</body>
