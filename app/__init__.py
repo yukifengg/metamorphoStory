@@ -55,9 +55,10 @@ def add_story(story_id):
 
 @app.route('/story/<story_id>', methods=["GET"])
 def add(story_id):
+    title = get_title(story_id)
     if can_read(session['username'],story_id):
-        return render_template('display-story.html',title=story_id,story_content=get_story_content(story_id))
-    return render_template('add.html',title=story_id,last_addition=get_last_addition(story_id))
+        return render_template('display-story.html',title=title,story_content=get_story_content(story_id))
+    return render_template('add.html',title=title,last_addition=get_last_addition(story_id))
 
 @app.route('/profile', methods=['GET','POST'])
 def profile():

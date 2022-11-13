@@ -40,3 +40,6 @@ created add.html, updated code in db.py and __init__.py to display last addition
 
 mayaM -- 2022-11-13 12:16
 Profile page displays stories user can contribute to and read under different headings and link to stories displays the entire story or a form to edit it
+
+mayaM -- 2022-11-13 16:04
+Backend uses story IDs instead of titles

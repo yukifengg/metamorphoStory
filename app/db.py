@@ -49,11 +49,10 @@ def can_read(username, story_id):
 
 def readable_stories(username):
     stories = all_stories()
-    editable_stories = []
     readable_stories = []
     for id in stories:
         if can_read(username, id):
-            readable_stories.append(id)
+            readable_stories.append([id,get_title(id)])
     return readable_stories
 
 def editable_stories(username):
@@ -61,7 +60,7 @@ def editable_stories(username):
     editable_stories = []
     for id in stories:
         if not can_read(username, id):
-            editable_stories.append(id)
+            editable_stories.append([id,get_title(id)])
     return editable_stories
 
 def get_story_content(story_id):
@@ -95,13 +94,16 @@ def get_story_id():
     print(f"Story ID: {story_id}")
     return story_id
 
-# def get_title(story_id):
-#     c = db_connect()
-#     c.execute("SELECT * FROM stories")
-#     story_id = 0
-#     for row in c:
-#         story_id += 1
-#     db_close()
+def get_title(story_id):
+    print(f"get_title() storyID: {story_id}")
+    print(type(story_id))
+    c = db_connect()
+    c.execute("SELECT title FROM stories WHERE id=?",(story_id,))
+    for row in c:
+        print(row)
+        title = row[0]
+    db_close()
+    return title
 
 def create_new_story(title, username, text):
     story_id = get_story_id()
