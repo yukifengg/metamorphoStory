@@ -36,9 +36,15 @@ def get_contributor_table_name(story_id):
 def get_part_table_name(story_id):
     return f"parts_{story_id}"
 
+# def delete_tables():
+#     c = db_connect()
+#     for :
+#         c.execute("DROP TABLE ?",(,))
+#     db_close()
+
 # returns True if user has never added to story
 def can_read(username, story_id):
-    # contributer_table_name = title + "_contributors"
+    # delete_tables()
     contributer_table_name = get_contributor_table_name(story_id)
     c = db_connect()
     c.execute(f"SELECT * FROM {contributer_table_name}")
@@ -47,6 +53,7 @@ def can_read(username, story_id):
     # print(editors_list)
     return username in editors_list
 
+# returns a list of story IDs that user can read
 def readable_stories(username):
     stories = all_stories()
     readable_stories = []
@@ -63,6 +70,7 @@ def editable_stories(username):
             editable_stories.append([id,get_title(id)])
     return editable_stories
 
+# returns a list of each addition
 def get_story_content(story_id):
     c = db_connect()
     story_table = get_part_table_name(story_id)
@@ -84,6 +92,7 @@ def get_last_addition(story_id):
     db_close()
     return last_line
 
+# returns what the ID should be for the next new story
 def get_story_id():
     c = db_connect()
     c.execute("SELECT * FROM stories")
@@ -128,8 +137,10 @@ def add_to_story(story_id, username, text):
     # print(text)
     # print(f'INSERT INTO {contributer_table_name} VALUES (\'{username}\')')
     # print(f'INSERT INTO {story_part} VALUES (\'{text}\')')
-    c.execute(f'INSERT INTO {contributer_table_name} VALUES (\'{username}\')')
-    c.execute(f'INSERT INTO {story_part} VALUES (\'{text}\')')
+    # c.execute(f'INSERT INTO {contributer_table_name} VALUES (\'{username}\')')
+    # c.execute(f'INSERT INTO {story_part} VALUES (\'{text}\')')
+    c.execute(f'INSERT INTO {contributer_table_name} VALUES (?)',(username,))
+    c.execute(f'INSERT INTO {story_part} VALUES (?)',(text,))
     db_close()
     # c.execute('INSERT INTO story_info VALUES (?,?,?,?)',(23, username, ))
 

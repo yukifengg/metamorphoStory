@@ -1,4 +1,4 @@
-from flask import Flask,render_template,session,request
+from flask import Flask,render_template,session,request,redirect
 import secrets
 from db import *
 
@@ -28,6 +28,8 @@ def logout():
 
 @app.route('/create', methods=["POST"])
 def create_story():
+    if 'username' not in session:
+        return redirect('/')
     db_table_inits()
     title = request.form['title']
     username = session['username']
@@ -41,11 +43,14 @@ def create_story():
 
 @app.route('/create', methods=["GET"])
 def create():
+    if 'username' not in session:
+        return redirect('/')
+        # return render_template('frontpage.html',not_logged_in=True)
     return render_template('create.html')
 
 @app.route('/story/<story_id>', methods=["POST"])
 def add_story(story_id):
-    print("ID: "+story_id)
+    # print("ID: "+story_id)
     username = session['username']
     text = request.form['content']
     add_to_story(story_id, username, text)
@@ -55,6 +60,8 @@ def add_story(story_id):
 
 @app.route('/story/<story_id>', methods=["GET"])
 def add(story_id):
+    if 'username' not in session:
+        return redirect('/')
     title = get_title(story_id)
     if can_read(session['username'],story_id):
         return render_template('display-story.html',title=title,story_content=get_story_content(story_id))
@@ -83,10 +90,11 @@ def profile():
             else:
                 return render_template('signup.html', error = True)
 
+    # redirects to landing page if not logged in
+    if 'username' not in session:
+        return redirect('/')
+        # return render_template('frontpage.html',not_logged_in=True)
     username = session['username']
-    # for story in all_stories():
-    #     print(f"{username} {story} {can_read(username,story)}")
-    get_story_id()
 
     return render_template('profile.html', username = username,readable_stories=readable_stories(username), editable_stories=editable_stories(username))
 

@@ -43,3 +43,6 @@ Profile page displays stories user can contribute to and read under different he
 
 mayaM -- 2022-11-13 16:04
 Backend uses story IDs instead of titles
+
+mayaM -- 2022-11-13 16:52
+Fixed bug where sometimes when Flask restarted the app and user reloads site, there is a KeyError.
