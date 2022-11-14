@@ -175,7 +175,10 @@ def create_new_user(username, password): #creates new user
 def check_credentials(username, password): #checks if there exists username and password in db, returns True if there is
     c = db_connect()
     c.execute('SELECT username,password FROM users WHERE username=? AND password=?',(username, password))
+    # for row in c:
+    #     print(row)
     user = c.fetchone()
+    print(user)
     db_close()
     if user:
         return True
