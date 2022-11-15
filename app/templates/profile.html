@@ -26,13 +26,13 @@
     <h3> Add to a story: </h3>
 
     {% for story in editable_stories %}
-      <a href="/story/{{story[0]}}"> {{ story[1] }} link</a>
+      <a href="/story/{{story[0]}}"> {{ story[1] }} </a>
       <br>
     {% endfor %}
 
     <h3> Read a story: </h3>
     {% for story in readable_stories %}
-      <a href="/story/{{story[0]}}"> {{ story[1] }} link</a>
+      <a href="/story/{{story[0]}}"> {{ story[1] }} </a>
       <br>
     {% endfor %}
 

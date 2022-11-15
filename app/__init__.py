@@ -10,7 +10,8 @@ app.secret_key = secrets.token_bytes(32)
 @app.route('/')
 def home():
     if 'username' in session:
-        return render_template('profile.html')
+        # return render_template('profile.html')
+        return profile()
     return render_template('frontpage.html')
 
 @app.route('/login')
