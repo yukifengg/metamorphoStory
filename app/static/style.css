@@ -8,14 +8,20 @@ body, html{
 }
 #header {
   background-color: #15B097;
+  justify-items: center;
   margin: 0 auto;
-  height: 90px;
+  height: 100px;
   width: 100%;
-  position: flex;
+  position: relative;
   top: 0;
   overflow: hidden;
   color: #CBEF43;
-  list-style-type: none;
+}
+.overlay{
+    display: block;
+    width: 100%;
+    position: absolute; 
+    bottom: 0;
 }
 #frontForm {
     margin: auto;
@@ -29,11 +35,6 @@ button {
     border: none;
     color: #710627;
     margin: 10px;
-}
-.home-button{
-    font-size: 16px;
-    border-radius: 25px;
-    align-content: center;
 }
 input{
     border-radius: 25px;
@@ -51,6 +52,12 @@ input{
 .login-container {
     width: 300px;
     margin: auto;
+}
+#displayStory {
+    display: flex;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: left;
 }
 #footer {
   background-color: #15B097;
