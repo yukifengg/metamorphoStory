@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Metamorphosis</title>
-    <link rel="stylesheet" href="../static/css/style.css">
+    <title>MetamorphoStory</title>
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
-    <h1> Welcome to MetamorphoStory</h1>
-
+    <div id="header">
+        <h1>MetamorphoStory</h1>
+    </div>
+    <p> Welcome to MetamorphoStory, a collaborative storytelling website. Log in or sign up now to read and contribute to stories. Our tales await you.</p>
     {% if not_logged_in %}
-    <h2> You are not logged in </h2>
+        <h2> You are not logged in </h2>
     {% endif %}
-        <form>
-            <button formaction="/login">Login here!</button>
-            <br>
-            <button formaction="/signup">sign up here!</button>
-        </form>
+    <form id = "frontForm">
+        <button formaction="/login">Login</button>
+        <br>
+        <button formaction="/signup">Sign Up</button>
+    </form>
+    <div id="footer">
+        <h4>MetamorphoStory by Metamorphosis Stuyvesant HS @2022</h4>
     </div>
 </body>
 </html>

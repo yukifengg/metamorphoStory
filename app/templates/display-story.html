@@ -2,8 +2,12 @@
 <html lang="en">
 <head>
     <title> {{story_title}} </title>
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
+    <div id="header">
+        <h1>MetamorphoStory</h1>
+    </div>
     <form>
         <button formaction="/profile">profile</button>
         <button formaction="/logout" method="POST">LOGOUT!</button>
@@ -27,4 +31,8 @@
         </button>
         {% endfor %}
     </form> -->
+    <div id="footer">
+        <h4>MetamorphoStory by Metamorphosis Stuyvesant HS @2022</h4>
+    </div>
 </body>
+</html>

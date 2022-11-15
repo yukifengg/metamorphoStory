@@ -3,28 +3,34 @@
 
   <head>
     <title> ADD TO STORY </title>
+    <link rel="stylesheet" href="../static/style.css">
   </head>
 
   <body>
-
+    <div id="header">
+        <h1>MetamorphoStory</h1>
+    </div>
     <form>
-        <button formaction="/profile">profile</button>
-        <button formaction="/logout" method="POST">LOGOUT!</button>
+        <button formaction="/profile">Profile</button>
+        <button formaction="/logout" method="POST">Log Out</button>
     </form>
 
-    <h1> Add to {{ title }} </h1>
+    <h2> Add to {{ title }} </h2>
 
     <form action="", method = "POST">
 
-      <p> ... {{ last_addition }} </p>
+      <p> Latest Contribution: "...{{ last_addition }}"</p>
 
       <label for="content"> Story content: </label>
       <br>
       <textarea name="content" cols="30" rows="10"></textarea>
       <br>
-      <input type="submit" name="sub1" value="Submit">
+      <input id = "submit" type="submit" name="sub1" value="Submit">
     </form>
     <br>
+    <div id="footer">
+        <h4>MetamorphoStory by Metamorphosis Stuyvesant HS @2022</h4>
+    </div>
   </body>
 
 </html>
