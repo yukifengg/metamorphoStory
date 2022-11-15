@@ -1,8 +1,11 @@
 # metamorphoStory by metamorphosis
-## Yuki Feng, Pd 8, PM
-## Maya Mori, Pd 8
-## Sasha Shifrina, Pd 8
-## Eric Sohel, Pd 8
+
+## Roles
+* Yuki Feng: PM
+* Maya Mori: Backend + HTML of add.html, create.html, display-story.html, frontpage.html
+* Eric Sohel: Back End: Databases, HTML of profile.html, login.html, signup.html
+* Sasha Shifrina: Backend + HTML of add.html, create.html, display-story.html
+
 ### Notable Notes
 * The usage of SQLITE to store data allows us to keep track of our users that visit our site, and cookies can help them keep their info on the site upon return
 * our `db.py` program holds functions for adding, editing stories, and user log in/sign ups.
@@ -17,7 +20,7 @@
 
 # Launch Codes:
 
-Step 0: Clone our repository 
+Step 0: Clone our repository
 
    gitclone git@github.com:yukifengg/metamorphoStory.git
 
@@ -33,7 +36,7 @@ Step 3: Open the link to the local host
 
     http://127.0.0.1:5000
 
-Our project was created under these conditions; if the project is not working properly, update to the following conditions. 
+Our project was created under these conditions; if the project is not working properly, update to the following conditions.
 
 ```
 click==8.1.3
@@ -45,4 +48,3 @@ MarkupSafe==2.1.1
 Werkzeug==2.2.2
 zipp==3.10.0
 ```
-

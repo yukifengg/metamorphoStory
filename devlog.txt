@@ -64,3 +64,6 @@ Fixed bug where sometimes when Flask restarted the app and user reloads site, th
 
 ericS --2022-11-14 10:00
 working on finanlizing design doc and all other aspects of the project.
+
+mayaM -- 2022-11-15 7:35
+Uploaded design doc and added roles to readme.
