@@ -46,3 +46,6 @@ Backend uses story IDs instead of titles
 
 mayaM -- 2022-11-13 16:52
 Fixed bug where sometimes when Flask restarted the app and user reloads site, there is a KeyError.
+
+ericS --2022-11-14 10:00
+working on finanlizing design doc and all other aspects of the project.
