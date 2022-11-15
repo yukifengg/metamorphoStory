@@ -19,7 +19,7 @@
 
 Step 0: Clone our repository 
 
-    git clone git@github.com:nakibabedin/SoftDev_p00.git riceExplosion
+   gitclone git@github.com:yukifengg/metamorphoStory.git
 
 Step 1: Change directory into our repository
 
