@@ -13,7 +13,36 @@
 ### Storytelling Website
 * Upon log in or creation of account, the user will be able to view, edit, and add their own stories to the site
 * A user can only see the last contribution made to a story and then after submitting an edit, the user can see the entirety of the story.
-### How to Clone/Install
-1. Clone this repository onto your machine: `git clone [ssh]`
-2. Get into running directory: `cd app`
-3. Run Flask app: `python3 __init__.py`
+
+
+# Launch Codes:
+
+Step 0: Clone our repository 
+
+    git clone git@github.com:nakibabedin/SoftDev_p00.git riceExplosion
+
+Step 1: Change directory into our repository
+
+    cd metamorphostory
+
+Step 2: Run the Flask Server
+
+    python3 app/__init__.py
+
+Step 3: Open the link to the local host
+
+    http://127.0.0.1:5000
+
+Our project was created under these conditions; if the project is not working properly, update to the following conditions. 
+
+```
+click==8.1.3
+Flask==2.2.2
+importlib-metadata==5.0.0
+itsdangerous==2.1.2
+Jinja2==3.1.2
+MarkupSafe==2.1.1
+Werkzeug==2.2.2
+zipp==3.10.0
+```
+
